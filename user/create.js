@@ -8,6 +8,12 @@ download({
     url: user.avatar,
     name: user.login + '.png',
     path: './avatars/'
+}, function(err, avatarLocalPath){
+    if (!err){
+        user.avatarLocalPath = avatarLocalPath;
+    }
 });
 
-module.exports = {};
+
+//TODO: check Node context and export different object based on result
+module.exports = user;

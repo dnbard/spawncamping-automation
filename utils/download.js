@@ -25,7 +25,7 @@ function download(options, callback){
                 console.log('File %s saved', options.name);
 
                 if (typeof callback === 'function'){
-                    callback();
+                    callback(null, options.path + options.name);
                 }
             });
         });
