@@ -11,6 +11,8 @@
   "dependencies": {
     "faker": "^2.0.1",
     "webdriverio": "^2.2.3",
-    "node-document": "0.1.0-pre9"
+    "node-document": "0.1.0-pre9",
+    "node-store": "0.0.1",
+    "warehousejs": "^0.3.0"
   }
 }

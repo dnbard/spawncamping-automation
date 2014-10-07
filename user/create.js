@@ -2,7 +2,7 @@ var User = require('./index'),
     download = require('../utils/download');
 
 function process(){
-    var user = new User;
+    var user = new User();
 
     download({
         url: user.avatar,

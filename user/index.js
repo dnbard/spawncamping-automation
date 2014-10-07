@@ -31,6 +31,7 @@ function User(){
     this.login = getLogin(this.name);
     this.email = getEmail(this.name);
     this.avatar = faker.image.avatar();
+    this.id = faker.random.number();
 }
 
 module.exports = User;
