@@ -1,19 +1,22 @@
 var User = require('./index'),
-    user = new User,
     download = require('../utils/download');
 
-console.log(JSON.stringify(user));
+function process(){
+    var user = new User;
 
-download({
-    url: user.avatar,
-    name: user.login + '.png',
-    path: './avatars/'
-}, function(err, avatarLocalPath){
-    if (!err){
-        user.avatarLocalPath = avatarLocalPath;
-    }
-});
+    download({
+        url: user.avatar,
+        name: user.login + '.png',
+        path: './avatars/'
+    }, function(err, avatarLocalPath){
+        if (!err){
+            user.avatarLocalPath = avatarLocalPath;
+        }
+    });
+}
 
-
-//TODO: check Node context and export different object based on result
-module.exports = user;
+if (module.parent){
+    module.exports = process;
+} else {
+    process();
+}

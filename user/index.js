@@ -30,10 +30,7 @@ function User(){
     this.name = getValidName();
     this.login = getLogin(this.name);
     this.email = getEmail(this.name);
-
-    console.log(faker.internet.userName());
-
-    this.avatar = faker.internet.avatar();
+    this.avatar = faker.image.avatar();
 }
 
 module.exports = User;

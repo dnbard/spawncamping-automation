@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "faker": "^2.0.1",
-    "webdriverio": "^2.2.3"
+    "webdriverio": "^2.2.3",
+    "node-document": "0.1.0-pre9"
   }
 }
