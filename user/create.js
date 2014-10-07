@@ -1,7 +1,7 @@
 var User = require('./index'),
     download = require('../utils/download');
 
-function process(){
+function process(callback){
     var user = new User();
 
     download({
@@ -10,9 +10,17 @@ function process(){
         path: './avatars/'
     }, function(err, avatarLocalPath){
         if (!err){
-            user.avatarLocalPath = avatarLocalPath;
+
+            user.avatarLocalPath = avatarLocalPath.replace('./', '');
+            console.log(user);
+
+            if (typeof callback == 'function'){
+                callback(user);
+            }
         }
     });
+
+    return user;
 }
 
 if (module.parent){
